@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "285123368127",
+    "project_id": "palmira-65dc7",
+    "storage_bucket": "palmira-65dc7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285123368127:android:b569a40bf55e9d5b57e20a",
+        "android_client_info": {
+          "package_name": "com.mikebeegar.elderfrontend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285123368127-bihunkv7ei8qruho72qlhamedjihbit7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFkbaRtsaJs5uk4M33Xch8alWLv52gvT0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285123368127-bihunkv7ei8qruho72qlhamedjihbit7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285123368127:android:51d9cd25fa09b68457e20a",
+        "android_client_info": {
+          "package_name": "com.mikebeegar.managerfrontend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285123368127-bihunkv7ei8qruho72qlhamedjihbit7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFkbaRtsaJs5uk4M33Xch8alWLv52gvT0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285123368127-bihunkv7ei8qruho72qlhamedjihbit7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
