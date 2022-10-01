@@ -66,10 +66,12 @@ export default function App() {
           sound: "default",
           title: "Palmira",
           body: `Fuera de la ubicación establecida: ${lat}, ${lon}`,
+          priority: "high",
         }),
       })
         .then((res) => {
           let response = JSON.stringify(res);
+          console.log(response);
         })
         .catch((e) => {
           console.log(e);
@@ -100,8 +102,6 @@ export default function App() {
           )
           .then(async (res) => {
             if (res.data.ok) {
-              console.log("location sent successfully", expoToken);
-
               let currLatitude = locations[0].coords.latitude;
               let currLongitude = locations[0].coords.longitude;
               await axios

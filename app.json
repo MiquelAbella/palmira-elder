@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "elder-frontend",
+    "name": "Palmira",
     "slug": "elder-frontend",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -20,11 +20,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/logo.png",
         "backgroundColor": "#FFFFFF"
       },
       "googleServicesFile": "./google-services.json",
-      "package": "com.mikebeegar.elderfrontend"
+      "package": "com.mikebeegar.elderfrontend",
+      "versionCode": 4
     },
     "web": {
       "favicon": "./assets/favicon.png"
