@@ -18,7 +18,6 @@ export const startLogin = (loginValues) => {
       })
       .then((res) => {
         if (res.data.ok) {
-          console.log(res.data);
           try {
             storeData("expoToken", res.data.user.expoToken);
             storeData("uid", res.data.user.uid);
@@ -27,7 +26,7 @@ export const startLogin = (loginValues) => {
           }
           dispatch(login(res.data.user));
         } else {
-          console.log(res.data);
+          console.log("ok");
         }
       })
       .catch((e) => {
@@ -69,7 +68,7 @@ export const startSetSchedule = (
         if (res.data.ok) {
           dispatch(setSchedule(res.data.user));
         } else {
-          console.log(res.data);
+          console.log("ok");
         }
       })
       .catch((e) => {
@@ -106,7 +105,7 @@ export const startGetUser = (uid) => {
         if (res.data.ok) {
           dispatch(getUser(res.data.user));
         } else {
-          console.log(res.data);
+          console.log("ok");
         }
         dispatch(isNotLoading());
       })

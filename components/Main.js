@@ -3,7 +3,7 @@ import {
   StyleSheet,
   View,
   Text,
-  TouchableHighlight,
+  TouchableOpacity,
   Button,
   Image,
   PermissionsAndroid,
@@ -142,12 +142,12 @@ export const Main = () => {
           <Text style={styles.subtitle}>
             Tu asistente virtual de proximidad para quien mas quieres
           </Text>
-          <TouchableHighlight
+          <TouchableOpacity
             style={styles.touchable}
             onPress={handleOpenLoginForm}
           >
             <Text style={styles.button}>Empezar</Text>
-          </TouchableHighlight>
+          </TouchableOpacity>
           <Text style={styles.info}>
             *Para poder usar la aplicación debe aceptar los permisos de
             ubicación (siempre)

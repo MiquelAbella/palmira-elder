@@ -3,22 +3,15 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  TouchableHighlight,
+  TouchableOpacity,
   View,
   ActivityIndicator,
 } from "react-native";
 
 import { useDispatch, useSelector } from "react-redux";
 import { startLogin } from "../actions/UserActions";
-import * as Location from "expo-location";
 
-export const LoginForm = ({
-  setIsLoginFormOpen,
-  backgroundLocationPermission,
-  foregroundLocationPermission,
-  setForegroundLocationPermission,
-  setBackgroundLocationPermission,
-}) => {
+export const LoginForm = ({ setIsLoginFormOpen }) => {
   const dispatch = useDispatch();
 
   const { isLoading } = useSelector((state) => state.auth);
@@ -58,11 +51,11 @@ export const LoginForm = ({
 
   return (
     <View style={styles.container}>
-      <TouchableHighlight onPress={handleGoBack}>
+      <TouchableOpacity onPress={handleGoBack}>
         <Text style={styles.backButton} onPress={handleGoBack}>
           Atrás
         </Text>
-      </TouchableHighlight>
+      </TouchableOpacity>
       <Text style={styles.title}>Entra</Text>
       <TextInput
         style={styles.input}
@@ -84,12 +77,12 @@ export const LoginForm = ({
       {isLoading ? (
         <ActivityIndicator size="large" />
       ) : (
-        <TouchableHighlight
+        <TouchableOpacity
           style={styles.submitButton}
           onPress={handleSubmitForm}
         >
           <Text style={styles.button}>Acceda</Text>
-        </TouchableHighlight>
+        </TouchableOpacity>
       )}
     </View>
   );

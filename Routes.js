@@ -6,11 +6,15 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { Main } from "./components/Main";
 import { ListenScreen } from "./components/ListenScreen";
+import { useEffect } from "react";
 
-export default function Routes() {
+export default function Routes({ setUid }) {
   const Stack = createNativeStackNavigator();
 
   const { uid } = useSelector((state) => state.auth);
+  useEffect(() => {
+    setUid(uid);
+  }, [uid]);
 
   return (
     <NavigationContainer>

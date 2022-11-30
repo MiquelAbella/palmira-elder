@@ -25,7 +25,7 @@
       },
       "googleServicesFile": "./google-services.json",
       "package": "com.mikebeegar.elderfrontend",
-      "versionCode": 4
+      "versionCode": 5
     },
     "web": {
       "favicon": "./assets/favicon.png"

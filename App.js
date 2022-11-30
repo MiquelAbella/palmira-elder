@@ -11,13 +11,16 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as Location from "expo-location";
 import * as TaskManager from "expo-task-manager";
 import axios from "axios";
-import { useMemo } from "react";
+
 import { useState } from "react";
-import { Text } from "react-native";
+
+//testing audio
+import * as Speech from "expo-speech";
 
 export default function App() {
   const [uid, setUid] = useState(null);
   const [expoToken, setExpoToken] = useState(null);
+
   useEffect(() => {
     getData();
 
@@ -25,7 +28,7 @@ export default function App() {
       (async () => {
         await Location.startLocationUpdatesAsync("getLocation", {
           accuracy: Location.Accuracy.High,
-          timeInterval: 60000,
+          timeInterval: 900000,
           distanceInterval: 0,
         });
       })();
@@ -34,7 +37,10 @@ export default function App() {
 
   const getData = async () => {
     try {
-      const uid = await AsyncStorage.getItem("uid");
+      if (!uid) {
+        const uid = await AsyncStorage.getItem("uid");
+        setUid(uid);
+      }
 
       if (uid) {
         await axios
@@ -70,8 +76,9 @@ export default function App() {
         }),
       })
         .then((res) => {
+          Speech.speak(`Se ha enviado la ubicación`);
           let response = JSON.stringify(res);
-          console.log(response);
+          console.log("Ok sending push", Date().toString());
         })
         .catch((e) => {
           console.log(e);
@@ -80,10 +87,12 @@ export default function App() {
   };
 
   TaskManager.defineTask("getLocation", ({ data, error }) => {
+   
     if (error) {
       console.log(error);
       return;
     }
+
     if (data && uid && expoToken) {
       const { locations } = data;
 
@@ -135,7 +144,7 @@ export default function App() {
                   console.log(e.message);
                 });
             } else {
-              console.log(res.data);
+              console.log("ok");
             }
           })
           .catch((e) => {
@@ -148,7 +157,7 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <Provider store={store}>
-        <Routes />
+        <Routes setUid={setUid} />
       </Provider>
     </SafeAreaProvider>
   );
